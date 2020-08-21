@@ -9,7 +9,7 @@ variable "description" {
   type        = string
 }
 
-variable "path"{
+variable "path" {
   description = "Path level of the IAM policy"
   default     = "/"
   type        = string
