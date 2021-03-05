@@ -1,6 +1,31 @@
-# terraform-aws-iam-policy
+# AWS Identity and Access Management Policy (IAM Policy) Terraform Module
 
-Terraform module to create an IAM policy.
+Terraform module to provision [`IAM Policy`](https://aws.amazon.com/iam/) on AWS.
+
+## Usage
+
+### Setup
+
+Create a IAM Policy.
+```hcl
+    module "iam_policy" {
+        source          = "git@github.com:nclouds/terraform-aws-iam-policy.git?ref=v0.1.0"
+        identifier      = "example-iam-policy"
+        description     = "IAM Policy for Cloudwatch Logs Administrator"
+        rendered_policy = {
+            actions = [
+                "logs:*"
+            ],
+            resources = [
+                "*",
+            ]
+        }
+    }
+```
+
+## Examples
+Here are some working examples of using this module:
+- [`examples/`](examples/)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
