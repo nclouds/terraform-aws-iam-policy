@@ -19,7 +19,7 @@ data "aws_iam_policy_document" "document" {
 }
 
 module "iam_policy" {
-  source          = "../.."
+  source          = "../"
   identifier      = "example-iam-policy"
   description     = "IAM Policy for Cloudwatch Logs Administrator"
   rendered_policy = data.aws_iam_policy_document.document.json
