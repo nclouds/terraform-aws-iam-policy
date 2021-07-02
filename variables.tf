@@ -19,3 +19,9 @@ variable "rendered_policy" {
   description = "Rendered JSON with the policy to be used"
   type        = string
 }
+
+variable "append_workspace" {
+  description = "Appends the terraform workspace at the end of resource names, <identifier>-<worspace>"
+  default     = true
+  type        = bool
+}
