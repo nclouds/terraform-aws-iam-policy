@@ -1,3 +1,6 @@
+[SourceCode](https://github.com/nclouds/terraform-aws-iam-policy/tree/v0.1.1/examples)   
+[Report an Issue](https://github.com/nclouds/terraform-aws-iam-policy/issues)
+
 # Simple IAM Policy example
 
 Configuration in this directory creates the following Resources:
