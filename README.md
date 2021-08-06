@@ -10,7 +10,7 @@ Create a IAM Policy.
 ```hcl
     module "iam_policy" {
         source          = "app.terraform.io/ncodelibrary/iam-policy/aws"
-        version         = "0.1.1"
+        version         = "0.1.2"
         identifier      = "example-iam-policy"
         description     = "IAM Policy for Cloudwatch Logs Administrator"
         rendered_policy = {
