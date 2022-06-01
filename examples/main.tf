@@ -23,4 +23,5 @@ module "iam_policy" {
   identifier      = "example-iam-policy"
   description     = "IAM Policy for Cloudwatch Logs Administrator"
   rendered_policy = data.aws_iam_policy_document.document.json
+  tags            = var.tags
 }
