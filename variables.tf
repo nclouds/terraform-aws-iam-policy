@@ -25,3 +25,9 @@ variable "append_workspace" {
   default     = true
   type        = bool
 }
+
+variable "tags" {
+  description = "Tags to be applied to the resource"
+  default     = {}
+  type        = map(any)
+}

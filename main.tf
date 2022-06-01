@@ -6,4 +6,5 @@ resource "aws_iam_policy" "policy" {
   policy      = var.rendered_policy
   name        = local.identifier
   path        = var.path
+  tags        = var.tags
 }
