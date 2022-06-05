@@ -1,9 +1,12 @@
 variable "tags" {
-  description = "tags to be applied to resources"
+  description = "Tags for the resource"
   default = {
-    Owner       = "sysops"
+    Terraform   = true
     Environment = "dev"
+    Name        = "Example"
+    Owner       = "sysops"
+    env         = "dev"
     Cost_Center = "XYZ"
-    Name        = "example-iam-policy"
   }
+  type = map(any)
 }
