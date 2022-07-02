@@ -8,6 +8,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+<a name="v0.1.5"></a>
+## [v0.1.5] - 2022-06-21
+FEATURES:
+- Enable OPA Checks
+- Update Module References to Github
+
+
 <a name="v0.1.4"></a>
 ## [v0.1.4] - 2022-06-01
 FEATURES:
@@ -50,7 +57,8 @@ DOCS:
 - adding base documentation
 
 
-[Unreleased]: https://github.com/nclouds/terraform-aws-iam-policy/compare/v0.1.4...HEAD
+[Unreleased]: https://github.com/nclouds/terraform-aws-iam-policy/compare/v0.1.5...HEAD
+[v0.1.5]: https://github.com/nclouds/terraform-aws-iam-policy/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/nclouds/terraform-aws-iam-policy/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/nclouds/terraform-aws-iam-policy/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/nclouds/terraform-aws-iam-policy/compare/v0.1.1...v0.1.2
