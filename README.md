@@ -14,7 +14,7 @@ Terraform module to provision [`IAM Policy`](https://aws.amazon.com/iam/) on AWS
 Create a IAM Policy.
 ```hcl
     module "iam_policy" {
-        source          = "git@github.com:nclouds/terraform-aws-iam-policy.git?ref=v0.1.5"
+        source          = "git@github.com:nclouds/terraform-aws-iam-policy.git?ref=v0.1.6"
         identifier      = "example-iam-policy"
         description     = "IAM Policy for Cloudwatch Logs Administrator"
         rendered_policy = {
