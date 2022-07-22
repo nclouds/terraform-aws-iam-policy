@@ -1,10 +1,18 @@
 locals {
   identifier = var.append_workspace ? "${var.identifier}-${terraform.workspace}" : var.identifier
+  tags       = merge(module.common_tags.output, var.tags)
 }
+
+module "common_tags" {
+  source      = "git@github.com:nclouds/terraform-aws-common-tags.git?ref=v0.1.1"
+  environment = terraform.workspace
+  name        = local.identifier
+}
+
 resource "aws_iam_policy" "policy" {
   description = var.description
   policy      = var.rendered_policy
   name        = local.identifier
   path        = var.path
-  tags        = var.tags
+  tags        = local.tags
 }
