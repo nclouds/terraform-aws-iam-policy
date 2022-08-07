@@ -1,0 +1,56 @@
+name: "semi-automate-tag-release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        type: choice
+        description: 'Release type'
+        required: true
+        options: 
+          - patch
+          - minor
+          - major
+        default: 'patch'
+
+jobs:
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      # ...
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Generate Changelog
+        env:
+          RELEASE_TYPE: ${{ inputs.release_type }}
+        run: |
+          make changelog
+          git remote ls
+          git branch
+
+      - name: Bump version and push tag
+        id: tag_version
+        uses: anothrNick/github-tag-action@1.39.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          COMMIT_SHA: ''
+          DEFAULT_BUMP: '${{ inputs.release_type }}'
+
+      - name: "Build & test"
+        run: |
+          echo "done!"
+
+      - name: 'Create new release'
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: ${{ steps.tag_version.outputs.new_tag }} 
+          prerelease: false
+          files: |
+            *.*
+            
