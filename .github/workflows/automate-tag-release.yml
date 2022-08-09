@@ -1,4 +1,4 @@
-name: "semi-automate-tag-release"
+name: "automate-tag-release"
 
 
 on:
