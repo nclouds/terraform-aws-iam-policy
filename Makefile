@@ -19,10 +19,11 @@ changelog:
 	echo "Next Tag => $(NEXT_TAG)"
 	git-chglog -o CHANGELOG.md --next-tag $(NEXT_TAG)
 	$(SED) "s/$(CURRENT_TAG)/$(NEXT_TAG)/g" README.md
-	git -c user.email="github-actions[bot]@users.noreply.github.com" -c user.name="github-actions[bot]" commit -am "Lock Version $(NEXT_TAG)"
+	git config --local user.name github-actions
+	git config --local user.email "github-actions@github.com" 
+	git commit -am "Lock Version $(NEXT_TAG)"
 	git push
 
 release:
 	$(SEMTAG_TOOL) final -s $(RELEASE_TYPE)
-	curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: token $(GITHUB_TOKEN)" https://api.github.com/repos/$(OWNER)/$(REPOSITORY)/releases -d '{"tag_name": "$(NEXT_TAG)","name": "$(NEXT_TAG)"}'
-
+	curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: token $(GH_TOKEN:wq)" https://api.github.com/repos/$(OWNER)/$(REPOSITORY)/releases -d '{"tag_name": "$(NEXT_TAG)","name": "$(NEXT_TAG)"}'
