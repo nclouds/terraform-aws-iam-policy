@@ -26,4 +26,4 @@ changelog:
 
 release:
 	$(SEMTAG_TOOL) final -s $(RELEASE_TYPE)
-	curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: token $(GH_TOKEN:wq)" https://api.github.com/repos/$(OWNER)/$(REPOSITORY)/releases -d '{"tag_name": "$(NEXT_TAG)","name": "$(NEXT_TAG)"}'
+	curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: token $(GH_TOKEN)" https://api.github.com/repos/$(OWNER)/$(REPOSITORY)/releases -d '{"tag_name": "$(NEXT_TAG)","name": "$(NEXT_TAG)"}'
