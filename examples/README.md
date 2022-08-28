@@ -1,4 +1,4 @@
-[SourceCode](https://github.com/nclouds/terraform-aws-iam-policy/tree/v0.1.7/examples)   
+[SourceCode](https://github.com/nclouds/terraform-aws-iam-policy/tree/master/examples)   
 [Report an Issue](https://github.com/nclouds/terraform-aws-iam-policy/issues)
 
 # Simple IAM Policy example
